@@ -1,0 +1,47 @@
+#include <stdio.h>
+int Count_zeroes(int num_of_elements,int array[]){
+  int zero_count=0;
+  for(int i=0;i<num_of_elements;i++){
+    if(array[i]==0){
+      zero_count+=1;
+    }
+  }
+  return zero_count;
+}
+int Initial_array(int n,int array[]){
+  printf("{");
+  for(int i=0;i<n;i++){
+    printf("%d",array[i]);
+    if(i<n-1){
+      printf(",");
+    }
+  }
+  printf("}");
+}
+int Tripled_array(int n,int array[]){
+  printf("{");
+  for(int i=0;i<n;i++){
+    int value=array[i]*3;
+    printf("%d",value);
+    if(i<n-1){
+        printf(",");
+    }
+  }
+  printf("}");
+}
+int main(){
+  int x[10];
+  printf("Input 10 numbers:");
+  for(int i=0;i<10;i++){
+    scanf("%d",&x[i]);
+  }
+  int count_elements=sizeof(x)/sizeof(x[0]);
+  printf("\nInitial array:");
+
+  Initial_array(count_elements,x);
+  printf("\nNumber of zeroes:%d",Count_zeroes(count_elements,x));
+  printf("\nTripled array:");
+  Tripled_array(count_elements,x);
+
+
+  }
